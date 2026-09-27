@@ -1,6 +1,18 @@
 package Session1;
 
-class CodingExercise {
+public class CodingExercise {
+
+    public static boolean isAscendingOrder(int[] s){
+        if(s.length == 0) return true;
+        int prev = Integer.MIN_VALUE;
+        for(int current : s){
+            if(current < prev){
+                return false;
+            }
+            prev = current;
+        }
+        return true;
+    }
 
     public static int[] generateArray(int size){
         if(size < 0) System.out.println("Input a positive size");
@@ -11,8 +23,8 @@ class CodingExercise {
         return result;
     }
 
-    public static int[] insertionSort(int[] s){
-        for(int i=1; i<s.length; i++){
+    public static int[] insertionSort(int[] s, int n){
+        for(int i=1; i<n; i++){
             int j = i-1;
             int key = s[i];
             while(j >= 0 && key < s[j]){
@@ -26,13 +38,13 @@ class CodingExercise {
     }
 
 
-    public static int[] selectionSort(int[] s){
+    public static int[] selectionSort(int[] s, int n){
         int temp = 0;
         
 
-        for(int i=0; i<s.length; i++){
+        for(int i=0; i<n; i++){
             int SmallestElementByIndex = i;
-            for(int j=i+1; j<s.length; j++){
+            for(int j=i+1; j<n; j++){
 
                 if(s[j] < s[SmallestElementByIndex]){
                     SmallestElementByIndex = j;
