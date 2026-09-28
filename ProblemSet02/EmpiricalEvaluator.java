@@ -23,7 +23,7 @@ class EmpiricalEvaluator {
         FileWriter fw = new FileWriter(file);
         List<Long> insertionSortResults;
         List<Long> selectionSortResults;
-        fw.write("Algorithm,	InputSize,	RunNumber, ExecutionTime\n");
+        fw.write("Algorithm,InputSize,RunNumber,ExecutionTime\n");
 
         for(int i=0; i<n.size(); i++){
             int currentInputSize = n.get(i);
